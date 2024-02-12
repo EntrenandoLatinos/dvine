@@ -1,0 +1,17 @@
+# Archivos de caché
+__pycache__/
+*.pyc
+
+#App migrations and media folders
+dvine/app_core/migrations/
+dvine/app_user/migrations/
+dvine/media/
+dvine/static/
+
+# Archivos de migraciones
+migrations/*
+*_initial.py
+
+# Base de datos SQLite
+*.sqlite3
+*.db

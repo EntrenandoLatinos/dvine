@@ -1,0 +1,25 @@
+{% extends "app_core/base.html" %}
+
+{% load static %}
+
+{% block head_title %}{{ block.super }} Works{% endblock head_title %}
+
+{% block extra_styles %}{% endblock extra_styles %}
+
+{% block content %}
+
+<!-- start Banner -->
+    {% include 'app_core/snippets/banner_works.html' %}
+<!-- end Banner -->
+
+<!-- start FAQ -->
+    {% include 'app_core/snippets/works_section.html' %}
+<!-- end FAQ -->
+
+<!-- start Contact -->
+    {% include 'app_core/snippets/subscribe.html' %}
+<!-- end Contact -->
+
+{% endblock content %}
+
+{% block extra_javascript %}{% endblock extra_javascript %}

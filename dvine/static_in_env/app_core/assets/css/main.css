@@ -2680,6 +2680,22 @@ header .navbar-expand .navbar-brand img {
     font-size: 45px;
 }
 
+/* Variante TikTok */
+.share-list .nav-link i.custom-icon-tiktok {
+    -webkit-text-stroke-width: 2.4px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #1d71b8; /* Color del contorno */
+    background-image: -webkit-linear-gradient(45deg, var(--four-color) 15%, var(--third-color) 65%);
+    background-image: linear-gradient(45deg, #4f84af00 15%, #4f84af00 65%);
+    font-size: 45px;
+}
+
+.share-list .nav-link i.custom-icon-tiktok-footer {
+    -webkit-text-stroke-width: 1.3px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #ffb000;
+    background-image: linear-gradient(45deg, #4f84af00 15%, #4f84af00 65%);
+    font-size: 22px;
+}
+
 .share-list li:first-child i {
     margin-left: 0;
 }

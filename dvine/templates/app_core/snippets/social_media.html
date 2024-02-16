@@ -82,7 +82,12 @@
                             <div class="text-center text-md-left">
                                 <h2 class="featured mt-0">Follow Us</h2>
                                 <ul class="navbar-nav social share-list mt-0">
+                                    {% for red_social in social_media %}
                                     <li class="nav-item">
+                                        <a href="{{red_social.url}}" class="nav-link" target="_blank"><i class="{{red_social.icon_class}}"></i></a>
+                                    </li>
+                                    {% endfor %}
+                                    <!-- <li class="nav-item">
                                         <a href="#" class="nav-link"><i class="icon-social-instagram custom-icon"></i></a>
                                     </li>
                                     <li class="nav-item">
@@ -94,6 +99,12 @@
                                     <li class="nav-item">
                                         <a href="#" class="nav-link"><i class="icon-social-twitter custom-icon"></i></a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link"><i class="fab fa-tiktok custom-icon-tiktok"></i> </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link"><i class="icon-social-youtube custom-icon"></i></a>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>

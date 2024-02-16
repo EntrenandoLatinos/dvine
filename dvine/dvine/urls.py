@@ -19,8 +19,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('', include('app_core.urls', namespace='app_core')),
+    path('', include('app_user.urls', namespace='app_user')),
 ]
 
 if settings.DEBUG:

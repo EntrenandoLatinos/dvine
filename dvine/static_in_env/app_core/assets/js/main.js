@@ -1052,7 +1052,7 @@ jQuery(function ($) {
 
     if ($('input[name="reCAPTCHA"]').length) {
 
-     let siteKey = "6Lf-NwEVAAAAAPo_wwOYxFW18D9_EKvwxJxeyUx7"; // Put your site key here
+     let siteKey = ""; // Put your site key here
      
      if(siteKey) { 
          $('input[name="reCAPTCHA"]').attr("data-key", siteKey); 

@@ -47,6 +47,13 @@
         <link rel="stylesheet" href="{% static 'app_core/assets/css/theme-custom.css' %}">
 
         <!-- ==============================================
+        Open Street Map
+        =============================================== -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton/src/easy-button.css" />
+
+        <!-- ==============================================
         Theme Settings
         =============================================== -->
         <style>
@@ -152,6 +159,74 @@
         <script src="{% static 'app_core/assets/js/main.js' %}"></script>
 
         <!-- #endregion Global ========================= -->
+        <!-- ==============================================
+        Open Street Map
+        =============================================== -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+        <script src="https://unpkg.com/leaflet-easybutton/src/easy-button.js"></script>
+
+        <script>
+            // Define la ubicación del marcador
+            var markerLocation = [46.2479066589165,-119.91981155125926];
+    
+            // Define la URL de la imagen personalizada
+            var imageUrl = '{% static "app_core/assets/images/logo_header.png" %}';
+    
+            // Crea un icono personalizado con la imagen
+            var customIcon = L.icon({
+                iconUrl: imageUrl,
+                iconSize: [64, 30], // Tamaño de la imagen en píxeles
+                iconAnchor: [32, 30], // Punto de anclaje del icono (la parte inferior del icono en este caso)
+            });
+    
+            var map = L.map('map', {
+                scrollWheelZoom: false,
+                attributionControl: false
+            }).setView(markerLocation, 17); // Definimos el centro y el nivel de zoom inicial
+    
+            // Agregamos el mapa de OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+    
+            // Crea el marcador con el icono personalizado
+            var marker = L.marker(markerLocation, { icon: customIcon }).addTo(map);
+    
+            // Añadimos un control de capas (opcional)
+            var baseLayers = {
+                "Mapa de Calle": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }),
+                "Satélite": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: '&copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+                })
+            };
+            L.control.layers(baseLayers).addTo(map);
+    
+            // Agregamos el control de ubicación con un icono personalizado
+            L.control.locate({
+                icon: 'fa fa-crosshairs'
+            }).addTo(map);
+            
+            // Creamos un botón personalizado para redirigir al marcador
+            var goToMarkerButton = L.easyButton('fa-location-arrow', function(btn, map){
+                map.setView(marker.getLatLng(), 17); // Centra el mapa en la ubicación del marcador con un zoom de 17
+            });
+            goToMarkerButton.addTo(map);
+            // Crear un botón personalizado
+            var googleMapsButton = L.easyButton('fa-map', function(btn, map){
+                // Obtener las coordenadas del marcador
+                var lat = marker.getLatLng().lat;
+                var lng = marker.getLatLng().lng;
+                
+                // Abrir Google Maps en un nuevo tab del navegador
+                window.open('https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lng, '_blank');
+            });
+    
+            // Agregar el botón al mapa
+            googleMapsButton.addTo(map);
+        </script>
 
     </body>
 </html>

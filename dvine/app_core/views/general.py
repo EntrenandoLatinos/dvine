@@ -10,7 +10,7 @@ def index(request):
   skills = Skill.objects.all().last()
   indicators = Counter.objects.all().last()
   servicios = Service.objects.all()
-  gallery = WorkImage.objects.all().order_by('?')[:6]
+  works = WorkImage.objects.all().order_by('?')[:6]
   testimonials = Testimonial.objects.all()
   partners = Partner.objects.all()
   social_media = SocialMedia.objects.all()
@@ -21,7 +21,7 @@ def index(request):
     'skills':skills,
     'indicators':indicators,
     'servicios':servicios,
-    'gallery':gallery,
+    'works':works,
     'testimonials':testimonials,
     'partners':partners,
     'social_media':social_media

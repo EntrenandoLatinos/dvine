@@ -7,119 +7,48 @@
             <div class="row intro">
                 <div class="col-12 col-md-9 align-self-center text-center text-md-left">
                     <h2 class="featured">Our Portfolio</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Explore our projects to inspire yourself today.</p>
                 </div>
                 <div class="col-12 col-md-3 align-self-end">
-                    <a href="#" class="btn mx-auto mr-md-0 ml-md-auto primary-button"><i class="icon-grid"></i>VIEW ALL</a>
+                    <a href="{% url 'app_core:works' %}" class="btn mx-auto mr-md-0 ml-md-auto primary-button"><i class="icon-grid"></i>VIEW ALL</a>
                 </div>
             </div>
             <div class="swiper-container mid-slider items" data-autoplay="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide slide-center item">
-                        <div class="row card p-0 text-center">
-                            <div class="gallery">
-                                <a href="assets/images/work-4.jpg" class="image-over">
-                                    <img src="{% static 'app_core/assets/images/work-4.jpg' %}" alt="Lorem ipsum">
+                    {% for work in works %}
+                        <div class="swiper-slide slide-center item">
+                            <div class="row card p-0 text-center">
+                                <a href="{{work.image.url}}" class="image-over" data-fancybox="galleryService">
+                                    <img src="{{work.image.url}}">
                                 </a>
-                            </div>
-                            <div class="card-caption col-12 p-0">
-                                <div class="card-body">
-                                    <h4 class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+                                <div class="card-caption col-12 p-0">
+                                    <!-- <div class="card-body">
+                                        <h4 class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+                                    </div> -->
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <a href="{% url 'app_core:works' %}">
+                                            <p>See More </p>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="card-footer d-lg-flex align-items-center justify-content-center">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="swiper-slide slide-center item">
-                        <div class="row card p-0 text-center">
-                            <div class="gallery">
-                                <a href="assets/images/work-5.jpg" class="image-over">
-                                    <img src="{% static 'app_core/assets/images/work-5.jpg' %}" alt="Lorem ipsum">
-                                </a>
-                            </div>
-                            <div class="card-caption col-12 p-0">
-                                <div class="card-body">
-                                    <h4 class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-                                </div>
-                                <div class="card-footer d-lg-flex align-items-center justify-content-center">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="swiper-slide slide-center item">
-                        <div class="row card p-0 text-center">
-                            <div class="gallery">
-                                <a href="assets/images/work-6.jpg" class="image-over">
-                                    <img src="{% static 'app_core/assets/images/work-6.jpg' %}" alt="Lorem ipsum">
-                                </a>
-                            </div>
-                            <div class="card-caption col-12 p-0">
-                                <div class="card-body">
-                                    <h4 class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-                                </div>
-                                <div class="card-footer d-lg-flex align-items-center justify-content-center">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="swiper-slide slide-center item">
-                        <div class="row card p-0 text-center">
-                            <div class="gallery">
-                                <a href="assets/images/work-7.jpg" class="image-over">
-                                    <img src="{% static 'app_core/assets/images/work-7.jpg' %}" alt="Lorem ipsum">
-                                </a>
-                            </div>
-                            <div class="card-caption col-12 p-0">
-                                <div class="card-body">
-                                    <h4 class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-                                </div>
-                                <div class="card-footer d-lg-flex align-items-center justify-content-center">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="swiper-slide slide-center item">
-                        <div class="row card p-0 text-center">
-                            <div class="gallery">
-                                <a href="assets/images/work-8.jpg" class="image-over">
-                                    <img src="{% static 'app_core/assets/images/work-8.jpg' %}" alt="Lorem ipsum">
-                                </a>
-                            </div>
-                            <div class="card-caption col-12 p-0">
-                                <div class="card-body">
-                                    <h4 class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-                                </div>
-                                <div class="card-footer d-lg-flex align-items-center justify-content-center">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="swiper-slide slide-center item">
-                        <div class="row card p-0 text-center">
-                            <div class="gallery">
-                                <a href="assets/images/work-9.jpg" class="image-over">
-                                    <img src="{% static 'app_core/assets/images/work-9.jpg' %}" alt="Lorem ipsum">
-                                </a>
-                            </div>
-                            <div class="card-caption col-12 p-0">
-                                <div class="card-body">
-                                    <h4 class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-                                </div>
-                                <div class="card-footer d-lg-flex align-items-center justify-content-center">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
+                            </div> 
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
 </section>
+
+{% block extra_javascript %}
+    <script>
+        Fancybox.bind('[data-fancybox="galleryService"]', {
+        // Your custom options for a specific gallery
+        afterShow: function(instance, current) {
+            console.log('FancyBox se ha mostrado');
+            // Aquí puedes colocar cualquier otra lógica que desees ejecutar después de que se muestre el FancyBox
+        }
+        });
+    </script>
+{% endblock extra_javascript %}

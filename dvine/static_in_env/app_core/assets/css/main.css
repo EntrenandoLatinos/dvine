@@ -3974,6 +3974,13 @@ footer .copyright a:not(.btn) {
     /* #endregion Modal */
 }
 
+@media (min-width: 768px) {
+    .slide-content-service {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
 @media(max-width: 767px) {
 
     /* #region General */

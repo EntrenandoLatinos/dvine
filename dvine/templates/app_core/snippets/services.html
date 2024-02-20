@@ -19,7 +19,7 @@
                                 <div class="left align-self-center text-center text-md-left">
                                     <h2 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text">{{service.title}}</h2>
                                     <div data-aos="zoom-out-up" data-aos-delay="800" class="description white_color_custom">{{service.description|safe}}</div>
-                                    <a href="#contact" data-aos="zoom-out-up" data-aos-delay="1200" class="smooth-anchor ml-auto mr-auto ml-md-0 mt-4 btn dark-button"><i class="icon-cup"></i>GET STARTED</a>
+                                    <a href="{% url 'app_core:services_view' service.id %}" data-aos="zoom-out-up" data-aos-delay="1200" class="ml-auto mr-auto ml-md-0 mt-4 btn dark-button"><i class="icon-cup"></i>SEE MORE</a>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                     <h2 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text">{{service.title}}</h2>
                                     <div data-aos="zoom-out-up" data-aos-delay="800" class="description ml-auto white_color_custom">{{service.description|safe}}</div>
                                     <div class="d-sm-inline-flex mt-3">
-                                        <a href="#contact" data-aos="zoom-out-up" data-aos-delay="1200" class="smooth-anchor ml-auto mr-auto mr-md-0 mt-4 mt-sm-0 btn dark-button"><i class="icon-cup"></i>GET STARTED</a>
+                                        <a href="{% url 'app_core:services_view' service.id %}" data-aos="zoom-out-up" data-aos-delay="1200" class="ml-auto mr-auto mr-md-0 mt-4 mt-sm-0 btn dark-button"><i class="icon-cup"></i>SEE MORE</a>
                                     </div>
                                 </div>
                             </div>

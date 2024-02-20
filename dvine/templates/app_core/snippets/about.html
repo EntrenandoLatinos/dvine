@@ -43,19 +43,19 @@
                         <div class="item widget-services">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a href="#">
+                                    <a href="javascript:;">
                                         <i class="icon icon-badge"></i>
                                         <h5>{{skills.title1}}</h5>
                                     </a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="#">
+                                    <a href="javascript:;">
                                         <i class="icon icon-briefcase"></i>
                                         <h5>{{skills.title2}}</h5>
                                     </a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="#">
+                                    <a href="javascript:;">
                                         <i class="icon icon-trophy"></i>
                                         <h5>{{skills.title3}}</h5>
                                     </a>
@@ -79,7 +79,7 @@
                                             
                                             <h4>{{testimonio.name}}</h4>
                                             <p>{{testimonio.description|truncatechars:100}}</p>
-                                            <a href="#contact" class="smooth-anchor ml-auto mr-auto btn primary-button"><i class="icon-cup"></i>See More</a>
+                                            <a href="{% url 'app_core:contact' %}#team" class="ml-auto mr-auto btn primary-button"><i class="icon-cup"></i>See More</a>
                                             <!-- <ul class="navbar-nav social share-list ml-auto">
                                                 <li class="nav-item">
                                                     <a href="#" class="nav-link"><i class="icon-star ml-2 mr-2"></i></a>

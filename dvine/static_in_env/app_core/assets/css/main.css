@@ -1697,7 +1697,8 @@ header .navbar-expand .navbar-brand img {
     font-size: 1rem;
     font-weight: 400;
     background: none;
-    color: var(--primary-p-color);
+    /* color: var(--primary-p-color); */
+    color: #f5f5f5;
     display: flex;
     justify-content: space-between;
     width: calc(100% - 12px);
@@ -1730,7 +1731,8 @@ header .navbar-expand .navbar-brand img {
     font-size: 1.5rem;
     font-weight: 600;
     border: none;
-    color: var(--primary-t-color);
+    /* color: var(--primary-t-color); */
+    color: var(--header-bg-color);
 }
 
 .theme-mode-dark .menu .nav-link:first-child {
@@ -3637,7 +3639,8 @@ footer .copyright a:not(.btn) {
     border: none;
     border-radius: 0;
     overflow-x: hidden;
-    background-color: var(--primary-bg-color-2);
+    /* background-color: var(--primary-bg-color-2); */
+    background-color: var(--third-color);
     background-size: cover;
     background-position: center center;
 }
@@ -3655,7 +3658,8 @@ footer .copyright a:not(.btn) {
     padding: 25px;
     border: none;
     font-weight: 600;
-    color: var(--primary-t-color);
+    /* color: var(--primary-t-color); */
+    color: #fff;
     border-radius: 0;
 }
 

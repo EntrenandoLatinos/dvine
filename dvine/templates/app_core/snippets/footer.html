@@ -68,7 +68,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#contact" class="mt-4 mr-auto ml-auto ml-lg-0 btn primary-button smooth-anchor"><i class="icon-speech"></i>SEND A MESSAGE</a>
+                                    <a href="{% url 'app_core:contact' %}#contact" class="mt-4 mr-auto ml-auto ml-lg-0 btn primary-button"><i class="icon-speech"></i>SEND A MESSAGE</a>
                                 </li>
                             </ul>
                         </div>
@@ -93,46 +93,11 @@
                             </ul>
                         </div>
                         <div class="col-12 col-lg-4 p-3 text-center text-lg-left item">
-                            <h4 class="title">Find Us</h4>
-                            <div style="width: 100%">
-                                <div id="map"></div>
-                                <!-- <iframe
-                                    width="100%"
-                                    height="210"
-                                    frameborder="0"
-                                    scrolling="no"
-                                    marginheight="0"
-                                    marginwidth="0"
-                                    src="https://www.openstreetmap.org/export/embed.html?bbox=-119.91981662726677,46.247938910333076,-119.91981662726677,46.247938910333076&layer=mapnik&marker=46.247938910333076,-119.91981662726677">
-                                </iframe>  -->
-                                <!-- <iframe 
-                                    width="100%" 
-                                    height="210" 
-                                    frameborder="0" 
-                                    scrolling="no" 
-                                    marginheight="0" 
-                                    marginwidth="0" 
-                                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=46.2478853,-119.9223889&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                                </iframe> -->
-                                <!-- <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3777.987407558813!2d98.9933669!3d18.7540995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDQ1JzE0LjciTiA5OMKwNTknNDQuMCJF!5e0!3m2!1sid!2s!4v1469346687955" 
-                                    width="600" 
-                                    height="450" 
-                                    frameborder="0" 
-                                    style="border:0" 
-                                    allowfullscreen>
-                                </iframe> -->
-                                <!-- <iframe 
-                                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=46.2479066589165,-119.91981155125926&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                    width="100%" 
-                                    height="210" 
-                                    frameborder="0" 
-                                    scrolling="no" 
-                                    marginheight="0" 
-                                    marginwidth="0" 
-                                    allowfullscreen>
-                                </iframe> -->
-                            </div>
+                            <h4 class="title">Our Work</h4>
+                            {% for work in works|slice:":1" %}
+                                <img src="{{work.image.url}}" alt="">
+                            {% endfor %}
+                            <a href="{% url 'app_core:works' %}" class="mt-4 mr-auto ml-auto ml-lg-0 btn primary-button"><i class="icon-grid"></i>VIEW ALL</a>
                         </div>
                     </div>
                 </div>

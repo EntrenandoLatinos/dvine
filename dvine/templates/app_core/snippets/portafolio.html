@@ -22,12 +22,13 @@
                                     <img src="{{work.image.url}}">
                                 </a>
                                 <div class="card-caption col-12 p-0">
-                                    <!-- <div class="card-body">
-                                        <h4 class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-                                    </div> -->
+                                    <a href="javascript:;" class="open-fancybox mb-4"  data-gallery="galleryService" data-index="{{ forloop.counter }}">
+                                        <i class="fas fa-search"></i>
+                                        <div class="hover-circle"></div>
+                                    </a>
                                     <div class="card-footer d-lg-flex align-items-center justify-content-center">
                                         <a href="{% url 'app_core:works' %}">
-                                            <p>See More </p>
+                                            <p>View All </p>
                                         </a>
                                     </div>
                                 </div>
@@ -45,10 +46,23 @@
     <script>
         Fancybox.bind('[data-fancybox="galleryService"]', {
         // Your custom options for a specific gallery
-        afterShow: function(instance, current) {
-            console.log('FancyBox se ha mostrado');
-            // Aquí puedes colocar cualquier otra lógica que desees ejecutar después de que se muestre el FancyBox
-        }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var fancyboxLinks = document.querySelectorAll('.open-fancybox');
+            
+            fancyboxLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var galleryName = link.getAttribute('data-gallery');
+                    var galleryIndex = link.getAttribute('data-index');
+                    var galleryItems = document.querySelectorAll('[data-fancybox="' + galleryName + '"]');
+                    
+                    if (galleryItems.length > 0) {
+                        galleryItems[galleryIndex-1].click(); // Simula un clic en el primer elemento de la galería
+                    }
+                });
+            });
         });
     </script>
 {% endblock extra_javascript %}

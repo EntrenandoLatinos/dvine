@@ -4,7 +4,21 @@
 
 {% block head_title %}{{ block.super }} FAQ's{% endblock head_title %}
 
-{% block extra_styles %}{% endblock extra_styles %}
+{% block extra_styles %}
+<style>
+    :root {
+        --card-bg-color: #16161c00;
+        --third-color: #ffffff;
+    }
+    .card:not(.no-hover):hover p {
+        color: var(--hero-bg-color);
+    }
+    .card:not(.no-hover):hover span,
+    .card.stycky:not(.no-hover) span {
+        -webkit-text-fill-color: var(--hero-bg-color);
+    }
+</style>
+{% endblock extra_styles %}
 
 {% block content %}
 

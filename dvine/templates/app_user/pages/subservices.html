@@ -6,7 +6,7 @@
 
 {% block extra_styles %}
 <!-- DataTables -->
-<link href="{% static 'app_core/vendor/DataTables/datatables.min.css' %}" rel="stylesheet">
+<link href="{% static 'app_user/vendors/DataTables/datatables.min.css' %}" rel="stylesheet">
 {% endblock extra_styles %}
 
 {% block content %}
@@ -19,10 +19,10 @@
 
 {% block extra_javascript %}
 <!-- DataTables -->
-<script src="{% static 'app_core/vendor/DataTables/datatables.min.js' %}"></script>
+<script src="{% static 'app_user/vendors/DataTables/datatables.min.js' %}"></script>
 
 <script>
-    $("#faqTable").DataTable({
+    $("#SubserviceTable").DataTable({
         dom: "lBfrtip",
         buttons: [
             'copy', 'excel', 'pdf'

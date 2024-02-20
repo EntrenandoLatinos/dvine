@@ -1,0 +1,68 @@
+{% load static %}
+
+<!-- Portfolio Grid -->
+<section id="portfolio-grid" class="section-1 showcase portfolio blog-grid filter-section">
+    <div class="overflow-holder pb-0">
+        <div class="container">
+            <div class="row text-center intro">
+                <div class="col-12">
+                    <h2 class="mb-0">What We Do</h2>
+                </div>
+            </div>               
+            <div class="row items filter-items mb-0">
+
+                {% for work in gallery %}
+                    <div class="col-12 col-md-6 col-lg-4 item filter-item" data-groups='["technology","digital-marketing","photography"]'>
+                        <div class="row card p-0 text-center">
+                            <a href="{{work.image.url}}" class="image-over" data-fancybox="galleryWorks">
+                                <img src="{{work.image.url}}">
+                            </a>
+                            <div class="card-caption col-12 p-0">
+                                <div class="card-body">
+                                    <!-- <h4 class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4> -->
+                                    <a href="javascript:;" class="open-fancybox"  data-gallery="galleryWorks" data-index="{{ forloop.counter }}">
+                                        <i class="fas fa-search"></i>
+                                        <div class="hover-circle"></div>
+                                    </a>
+                                </div>
+                                <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                    <a href="javascript:;" class="open-fancybox"  data-gallery="galleryWorks" data-index="{{ forloop.counter }}">
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                {% endfor %}
+            
+                <div class="col-1 filter-sizer"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% block extra_javascript %}
+    <script>
+        Fancybox.bind('[data-fancybox="galleryWorks"]', {
+        // Your custom options for a specific gallery
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            var fancyboxLinks = document.querySelectorAll('.open-fancybox');
+            
+            fancyboxLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var galleryName = link.getAttribute('data-gallery');
+                    var galleryIndex = link.getAttribute('data-index');
+                    var galleryItems = document.querySelectorAll('[data-fancybox="' + galleryName + '"]');
+                    
+                    if (galleryItems.length > 0) {
+                        galleryItems[galleryIndex-1].click();
+                    }
+                });
+            });
+        });
+        
+    </script>
+{% endblock extra_javascript %}

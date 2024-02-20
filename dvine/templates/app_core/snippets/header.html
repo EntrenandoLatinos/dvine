@@ -30,16 +30,18 @@
                 <li class="nav-item dropdown">
                     <a href="#header" class="nav-link">Services<i class="icon-arrow-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li class="nav-item">
-                            <a href="javascript:;" class="nav-link">Service</a>
-                        </li>
+                        {% for service in servicios %}
+                            <li class="nav-item">
+                                <a href="{% url 'app_core:services_view' service.id %}" class="nav-link">{{service.title}}</a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a href="{% url 'app_core:works' %}" class="nav-link">Works</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'app_core:faq' %}" class="nav-link">Faq's</a>
+                    <a href="{% url 'app_core:faq' %}" class="nav-link">FAQ's</a>
                 </li>
                 <li class="nav-item">
                     <a href="{% url 'app_core:contact' %}" class="nav-link">Contact</a>

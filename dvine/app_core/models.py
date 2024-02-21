@@ -54,6 +54,7 @@ class Banner(AuditoriaFecha):
     title = models.CharField("Banner title", max_length=30, null=True, blank=True, default="")
     subtitle = models.CharField("Banner subtitle", max_length=30, null=True, blank=True, default="")
     description = models.TextField("Description", max_length=73, null=True, blank=True)
+    insurance = models.CharField("Insurance", max_length=100, null=True, blank=True, default="")
 
     def __str__(self):
         return "{0}".format(str(self.title))

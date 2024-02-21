@@ -26,11 +26,12 @@ class ContactForm(forms.ModelForm):
 class BannerForm(forms.ModelForm):
     class Meta:
         model = Banner
-        fields = ['image', 'title', 'subtitle', 'description']
+        fields = ['image', 'title', 'subtitle', 'description', 'insurance']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'subtitle': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'resizable_textarea form-control'}),
+            'insurance': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
 class AboutForm(forms.ModelForm):

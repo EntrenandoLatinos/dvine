@@ -101,8 +101,16 @@ def services_view(request, pk):
   servicios = Service.objects.all()
   servicio = Service.objects.get(pk=pk)
   subservicios = SubService.objects.filter(service=pk)
+  works = WorkImage.objects.all().order_by('?')[:1]
   social_media = SocialMedia.objects.all()
-  context = {'contact':contact, 'servicio':servicio, 'servicios':servicios, 'subservicios':subservicios, 'social_media':social_media}
+  context = {
+    'contact':contact, 
+    'servicio':servicio, 
+    'servicios':servicios, 
+    'subservicios':subservicios, 
+    'works':works,
+    'social_media':social_media
+    }
   if request.method == 'POST':
     if 'stay_connected' in request.POST:
       username = request.POST.get('userName')

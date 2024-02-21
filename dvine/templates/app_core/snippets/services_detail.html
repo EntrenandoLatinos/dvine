@@ -10,18 +10,12 @@
                 <div class="row">
                     <div class="col-12 align-self-center">
                         <h2 class="featured mt-0 ml-0">{{servicio.title}}</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum velit tortor, interdum sed cursus eu, sagittis ut nunc. Sed vitae tellus et arcu aliquet faucibus fermentum non lacus.</p>
-                        <p>Praesent fringilla quis massa et placerat. Mauris eu dui eget urna pellentesque gravida vitae quis nibh. Ut at augue tortor. Pellentesque quis suscipit magna.</p>
-                        
-                        <p>Sed mauris nulla, tempor eu est vel, dapibus hendrerit mauris curabitur dictum pharetra.</p>
-
+                        {{servicio.description|safe}}
                         <!-- Image -->
-                        <div class="gallery">
-                            <div class="container_custom">
-                                <a href="{{servicio.image.url}}">
-                                    <img src="{{servicio.image.url}}" class="w-100">
-                                </a>
-                            </div>
+                        <div class="gallery container_custom">
+                            <a href="{{servicio.image.url}}">
+                                <img src="{{servicio.image.url}}" class="w-100">
+                            </a>
                         </div>
 
                         <p>
@@ -59,30 +53,58 @@
             </div>
         </section>
     {% else %}
-        <!-- Suibservice Rigth -->
-        <section id="video" class="section-2 odd highlights image-left">
-            <div class="container">
-                <div class="row">
-                    <div class="gallery col-12 col-md-6">
-                        <a href="{{subservice.image.url}}">
-                            <!-- <i class="play-video icon-control-play"></i>
-                            <div class="mask-radius"></div> -->
-                            <img src="{{subservice.image.url}}" class="fit-image" alt="Institutional">
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-6 pl-md-5 align-self-center text-center text-md-left">
-                        <div class="row intro mb-0">
-                            <div class="col-12 p-0">
-                                <h2 class="featured">{{subservice.title}}</h2>
-                                <div class="custom_color_subservice">
-                                    {{subservice.description|safe}}
+        {% if forloop.last %}
+            <!-- Este es el último elemento - Suibservice Rigth -->
+            <section id="video" class="section-2 odd highlights image-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="gallery col-12 col-md-6">
+                            <a href="{{subservice.image.url}}">
+                                <!-- <i class="play-video icon-control-play"></i>
+                                <div class="mask-radius"></div> -->
+                                <img src="{{subservice.image.url}}" class="fit-image" alt="Institutional">
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 pl-md-5 align-self-center text-center text-md-left">
+                            <div class="row intro mb-0">
+                                <div class="col-12 p-0">
+                                    <h2 class="featured">{{subservice.title}}</h2>
+                                    <div class="custom_color_subservice">
+                                        {{subservice.description|safe}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>    
+            <section class="section-1" style="padding: 60px 0px;"></section>
+        {% else %}
+            <!-- No es el último elemento - Suibservice Rigth -->
+            <section id="video" class="section-2 odd highlights image-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="gallery col-12 col-md-6">
+                            <a href="{{subservice.image.url}}">
+                                <!-- <i class="play-video icon-control-play"></i>
+                                <div class="mask-radius"></div> -->
+                                <img src="{{subservice.image.url}}" class="fit-image" alt="Institutional">
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 pl-md-5 align-self-center text-center text-md-left">
+                            <div class="row intro mb-0">
+                                <div class="col-12 p-0">
+                                    <h2 class="featured">{{subservice.title}}</h2>
+                                    <div class="custom_color_subservice">
+                                        {{subservice.description|safe}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
     {% endif %}
     
 {% endfor %}    

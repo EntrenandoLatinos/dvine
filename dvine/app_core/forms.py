@@ -13,12 +13,14 @@ SOCIAL_MEDIA_CHOICES = [
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ['location', 'phone1', 'phone2', 'email']
+        fields = ['location', 'phone1', 'phone2', 'email', 'latitude', 'longitude']
         widgets = {
             'location': forms.TextInput(attrs={'class': 'form-control'}),
             'phone1': forms.TextInput(attrs={'class': 'form-control'}),
             'phone2': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'type': 'email'}),
+            'latitude': forms.NumberInput(attrs={'class': 'form-control', 'type': 'number' }),
+            'longitude': forms.NumberInput(attrs={'class': 'form-control', 'type': 'number'}),
         }
 
 class BannerForm(forms.ModelForm):

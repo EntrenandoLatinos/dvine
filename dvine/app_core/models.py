@@ -38,6 +38,8 @@ class Contact(AuditoriaFecha):
     phone1 = models.CharField("Phone 2", max_length=60, null=True, blank=True)
     phone2 = models.CharField("Phone 1", max_length=60, null=True, blank=True)
     email = models.EmailField("Email", null=True, blank=True)
+    latitude = models.FloatField("latitude", null=True, blank=True)
+    longitude = models.FloatField("longitude", null=True, blank=True)
 
     def __str__(self):
         return "{0}".format(str(self.email))

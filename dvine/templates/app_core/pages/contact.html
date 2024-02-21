@@ -28,6 +28,19 @@ Open Street Map
         background: linear-gradient(45deg, var(--four-color) 15%, var(--third-color) 65%);
         transform: translateY(-7.5px);
     }
+    #map {
+        width: 100%;
+        height: 450px;
+    }
+    .leaflet-control-locate a {
+        color: black !important;
+    }
+    .leaflet-control-zoom a {
+        color: black !important;
+    }
+    .leaflet-control-layers-list {
+        padding: 0 0;
+    }
 </style>
 {% endblock extra_styles %}
 
@@ -60,8 +73,12 @@ Open Street Map
 <script src="https://unpkg.com/leaflet-easybutton/src/easy-button.js"></script>
 
 <script>
+    // coordinates
+    var latitude = "{{contact.latitude}}";
+    var longitude = "{{contact.longitude}}";
+
     // Define la ubicación del marcador
-    var markerLocation = [46.2479066589165,-119.91981155125926];
+    var markerLocation = [latitude,longitude];
 
     // Define la URL de la imagen personalizada
     var imageUrl = '{% static "app_core/assets/images/logo_header.png" %}';
@@ -104,7 +121,7 @@ Open Street Map
     
     // Creamos un botón personalizado para redirigir al marcador
     var goToMarkerButton = L.easyButton('fa-location-arrow', function(btn, map){
-        map.setView(marker.getLatLng(), 17); // Centra el mapa en la ubicación del marcador con un zoom de 17
+        map.setView(marker.getLatLng(), 16); // Centra el mapa en la ubicación del marcador con un zoom de 17
     });
     goToMarkerButton.addTo(map);
     // Crear un botón personalizado

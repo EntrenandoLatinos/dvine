@@ -1,0 +1,57 @@
+{% extends "account/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{{ block.super }}{% trans "Sign In" %}{% endblock %}
+
+
+{% block content %}
+<form class="row" method="POST" action="{% url 'account_login' %}">
+	{% csrf_token %}
+	<div class="col-12 p-0 align-self-center">
+		<div class="row">
+			<div class="col-12 p-0 pb-3">
+				<h2>Log In</h2>
+				<p class="white_color_custom">
+					Back to 
+					<a href="{% url 'app_core:index' %}" class="primary-color">
+						Home <i class="icon-home"></i>
+					</a>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 p-0 input-group">
+				<input type="text" class="form-control" placeholder="Username or Email" id="loginEmail" name="login" required>
+			</div>
+			<div class="col-12 p-0 input-group">
+				<input type="password" class="form-control" placeholder="Password" id="loginPass" name="password" required>
+			</div>
+			{% if form.errors %}
+				{% for field in form %}
+					{% for error in field.errors %}
+						<div class="alert alert-danger">
+							<strong>{{ error|escape }}</strong>
+						</div>
+					{% endfor %}
+				{% endfor %}
+				{% for error in form.non_field_errors %}
+					<div class="alert alert-danger">
+						<strong>{{ error|escape }}</strong>
+					</div>
+				{% endfor %}
+			{% endif %}
+	
+			{% if redirect_field_value %}
+				<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+			{% endif %}
+		</div>
+		<div class="row">
+			<div class="col-12 p-0 input-group align-self-center">
+				<button class="btn primary-button"><i class="icon-login"></i>LOGIN</button>
+			</div>
+		</div>
+	</div>
+</form>
+{% endblock content %}

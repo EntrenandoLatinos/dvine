@@ -1,0 +1,32 @@
+{% load static %}
+
+<!-- Hero -->
+<section id="slider" class="hero p-0 featured">
+    <div class="swiper-container no-slider animation slider-h-100">
+        <div class="swiper-wrapper">
+
+            <!-- Item 1 -->
+            <div class="swiper-slide slide-center">
+
+                <img src="{{banner.image.url}}" class="full-image" data-mask="50">
+
+                <div class="slide-content row">
+                    <div class="col-12 d-flex inner">
+                        <div class="center align-self-center text-center">
+                            <h1 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text">{{banner.title}}</h1>
+                            <p data-aos="zoom-out-up" data-aos-delay="800" class="description ml-auto mr-auto white_color_custom">{{banner.subtitle}}</p>
+                            <!-- <a href="#contact" data-aos="zoom-out-up" data-aos-delay="1200" class="smooth-anchor ml-auto mr-auto mt-5 btn primary-button"><i class="icon-cup"></i>GET STARTED</a> -->
+                            <a id="whatsapp_banner_web" style="background-color: #25d366; color: white;" data-aos="zoom-out-up" data-aos-delay="1200" class="ml-auto mr-auto mt-5 btn" target="_blank" href="https://web.whatsapp.com/send?l=es&phone=1{{contact.phone1}}&text=https://www.ideafix.com/ " rel="noopener noreferrer">
+                                <i class="whatsapp-icon"></i> Whatsapp 
+                            </a>
+                            <a id="whatsapp_banner_movil" style="background-color: #25d366; color: white;" data-aos="zoom-out-up" data-aos-delay="1200" class="ml-auto mr-auto mt-5 btn" target="_blank" href="https://api.whatsapp.com/send?l=es&phone=1{{contact.phone1}}&text=https://www.ideafix.com.co/ " rel="noopener noreferrer">
+                                <i class="whatsapp-icon"></i> Whatsapp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,50 @@
+{% load static %}
+
+<!-- Team -->
+<section id="team" class="section-1 carousel card-white" style="padding-top: 30px;">
+    <div class="overflow-holder">
+        <div class="container">
+            <div class="row text-center intro">
+                <div class="col-12">
+                    <h2 class="super effect-static-text">Testimonials</h2>
+                    <p class="text-max-800">Discover what our satisfied customers have to say about their experiences with DVine Roofing LLC in our testimonials section.</p>
+                </div>
+            </div>
+            <div class="swiper-container mid-slider-simple items" data-autoplay="true">
+                <div class="swiper-wrapper">
+                    {% for testimonio in testimonials %}
+                        <div class="swiper-slide slide-center text-center item">
+                            <div class="row card">
+                                <div class="col-12">
+                                    {% if testimonio.image %}
+                                        <img src="{{testimonio.image.url}}" alt="Adams Baker" class="person">
+                                    {% else %}
+                                        <img src="{% static 'app_user/images/user.png' %}" alt="Adams Baker" class="person">
+                                    {% endif %}
+                                    <h4>{{testimonio.name}}</h4>
+                                    <!-- <p>{{testimonio.location}}</p> -->
+                                    <p>{{testimonio.description}}</p>
+                                    <!-- <ul class="navbar-nav social share-list ml-auto">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link"><i class="icon-social-instagram"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link"><i class="icon-social-facebook"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link"><i class="icon-social-linkedin"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link"><i class="icon-social-twitter"></i></a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+{% extends "app_core/base.html" %}
+
+{% load static %}
+
+{% block head_title %}{{ block.super }} FAQ's{% endblock head_title %}
+
+{% block extra_styles %}
+<style>
+    :root {
+        --card-bg-color: #16161c00;
+        --third-color: #ffffff;
+    }
+    .card:not(.no-hover):hover p {
+        color: var(--hero-bg-color);
+    }
+    .card:not(.no-hover):hover span,
+    .card.stycky:not(.no-hover) span {
+        -webkit-text-fill-color: var(--hero-bg-color);
+    }
+</style>
+{% endblock extra_styles %}
+
+{% block content %}
+
+<!-- start Banner -->
+    {% include 'app_core/snippets/banner_faq.html' %}
+<!-- end Banner -->
+
+<!-- start FAQ -->
+    {% include 'app_core/snippets/faq_section.html' %}
+<!-- end FAQ -->
+
+<!-- start Contact -->
+    {% include 'app_core/snippets/subscribe.html' %}
+<!-- end Contact -->
+
+{% endblock content %}
+
+{% block extra_javascript %}{% endblock extra_javascript %}

@@ -1,0 +1,73 @@
+{% load static %}
+
+<!-- About [video] -->
+<!-- <section id="video" class="section-2 odd highlights image-center">
+    <div class="container smaller">
+        <div class="row text-center intro">
+            <div class="col-12">
+                <h2>Institutional</h2>
+                <p class="text-max-800">Get to know a little of our history and the road we traveled that took us to the level we are today.</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 gallery">
+                <a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="square-image d-flex justify-content-center align-items-center">
+                    <i class="icon bigger icon-control-play"></i>
+                    <img src="{% static 'app_core/assets/images/news-4.jpg' %}" class="fit-image" alt="Fit Image">
+                </a>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- About [video] -->
+<section id="video" class="section-2 odd highlights image-center">
+    <div class="container smaller">
+        <div class="row text-center intro">
+            <div class="col-12">
+                <h2>Institutional</h2>
+                <p class="text-max-800">Get to know a little of our history and the road we traveled that took us to the level we are today.</p>
+            </div>
+        </div>
+        <div id="video-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row text-center">
+                        <div class="col-12 gallery">
+                            <a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="square-image d-flex justify-content-center align-items-center">
+                                <i class="icon bigger icon-control-play"></i>
+                                <img src="{% static 'app_core/assets/images/news-4.jpg' %}" class="fit-image" alt="Fit Image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row text-center">
+                        <div class="col-12 gallery">
+                            <a href="https://www.youtube.com/watch?v=69qKUoGhoQo" class="square-image d-flex justify-content-center align-items-center">
+                                <i class="icon bigger icon-control-play"></i>
+                                <img src="{% static 'app_core/assets/images/news-4.jpg' %}" class="fit-image" alt="Fit Image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Controles del carrusel -->
+            <a class="carousel-control-prev" href="#video-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#video-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <!-- Indicadores -->
+            <ol class="carousel-indicators">
+                <li data-target="#video-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#video-carousel" data-slide-to="1"></li>
+                <!-- Agrega más elementos li si tienes más vídeos -->
+            </ol>
+        </div>
+        
+    </div>
+</section>

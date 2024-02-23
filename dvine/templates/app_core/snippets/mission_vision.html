@@ -1,0 +1,46 @@
+{% load static %}
+
+<!-- About [video] -->
+<section id="video" class="section-3 highlights image-left">
+    <div class="container">
+        <div class="row">
+            <div class="gallery col-12 col-md-6">
+                <a href="{% static 'app_core/assets/images/mission_vision.webp' %}">
+                    <!-- <i class="play-video icon-control-play"></i> -->
+                    <!-- <div class="mask-radius"></div> -->
+                    <img src="{% static 'app_core/assets/images/mission_vision.webp' %}" class="fit-image" alt="Institutional">
+                </a>
+            </div>
+            <div class="col-12 col-md-6 pl-md-5 align-self-center text-center text-md-left">
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <h2 class="featured alt">Institutional</h2>
+                        <!-- <p>Get to know a little of our history and the road we traveled that took us to the level we are today.</p> -->
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-12 p-0">
+                        <div class="row item mb-0">
+                            <div class="col-12 col-md-2 align-self-center">
+                                <i class="icon icon-trophy"></i>
+                            </div>
+                            <div class="col-12 col-md-9 align-self-center mb-0">
+                                <h4>Mission</h4>
+                                {{about.mision|safe}}
+                            </div>  
+                        </div>
+                        <div class="row item">
+                            <div class="col-12 col-md-2 align-self-center">
+                                <i class="icon icon-diamond"></i>
+                            </div>
+                            <div class="col-12 col-md-9 align-self-center">
+                                <h4>Vision</h4>
+                                {{about.vision|safe}}
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

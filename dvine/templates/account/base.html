@@ -1,0 +1,185 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- ==============================================
+        Basic Page Needs
+        =============================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+
+        <title>Leverage - Your next level of website building</title>
+
+        <meta name="description" content="Creative Agency, Portfolio, Corporate, Startup & Technology">
+        <meta name="subject" content="Creative Agency, Portfolio, Corporate, Startup & Technology">
+        <meta name="author" content="Codings">
+
+        <!-- ==============================================
+        Favicons
+        =============================================== -->
+        <link rel="shortcut icon" href="{% static 'app_core/assets/images/favicon1.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'app_core/assets/images/apple-touch-icon.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'app_core/assets/images/apple-touch-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'app_core/assets/images/apple-touch-icon-114x114.png' %}">
+
+        <!-- ==============================================
+        Vendor Stylesheet
+        =============================================== -->
+        <link rel="stylesheet" href="{% static 'app_core/assets/css/vendor/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app_core/assets/css/vendor/slider.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app_core/assets/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'app_core/assets/css/vendor/icons.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app_core/assets/css/vendor/animation.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app_core/assets/css/vendor/gallery.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app_core/assets/css/vendor/cookie-notice.min.css' %}">
+
+        <!-- ==============================================
+        Custom Stylesheet
+        =============================================== -->
+        <link rel="stylesheet" href="{% static 'app_core/assets/css/default.css' %}">
+        <link rel="stylesheet" href="{% static 'app_core/assets/css/theme-custom.css' %}">
+
+        <!-- ==============================================
+        Theme Settings
+        =============================================== -->
+        <style>
+            :root {
+                --header-bg-color: #ffffff;
+                --nav-item-color: #1d71b8;
+                --top-nav-item-color: #f5f5f5;
+                --hero-bg-color: #1d71b8;
+            }
+            
+            .white_color_custom {
+                color: white;
+            }
+        </style>
+        
+    </head>
+
+    <body>
+
+        <!-- Hero -->
+        <section id="slider" class="hero p-0 odd">
+            <div class="swiper-container no-slider slider-h-100">
+                <div class="swiper-wrapper">
+
+                    <!-- Item 1 -->
+                    <div class="swiper-slide slide-center">
+                        
+                        <!-- <img src="{% static 'app_core/assets/images/bg-8.jpg' %}" class="full-image" data-mask="70"> -->
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 order-md-2 order-1">
+                                    <img src="{% static 'app_core/assets/images/logo_marco.png' %}" style="width: 100%;">
+                                </div>
+                                <div class="col-md-6 order-md-1 order-2 d-flex align-items-center justify-content-center mb-5 mb-md-0">
+                                    <div class="text-center text-md-left">
+                                        
+                                        {% block content %}{% endblock content %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="slide-content row">
+                            <div class="col-12 d-flex inner">
+                                <div class="center align-self-center text-center">
+                                    
+                                    <form class="row" method="POST" action="{% url 'account_login' %}">
+                                        {% csrf_token %}
+                                        <div class="col-12 p-0 align-self-center">
+                                            <div class="row">
+                                                <div class="col-12 p-0 pb-3">
+                                                    <h2>Sign In</h2>
+                                                    <p>Don't have an account? <a href="#" class="primary-color" data-toggle="modal" data-target="#register">Register now</a>.</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 p-0 input-group">
+                                                    <input type="text" class="form-control" placeholder="Username or Email" id="loginEmail" name="login" required>
+                                                </div>
+                                                <div class="col-12 p-0 input-group">
+                                                    <input type="password" class="form-control" placeholder="Password" id="loginPass" name="password" required>
+                                                </div>
+                                                {% if form.errors %}
+                                                    {% for field in form %}
+                                                        {% for error in field.errors %}
+                                                            <div class="alert alert-danger">
+                                                                <strong>{{ error|escape }}</strong>
+                                                            </div>
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                    {% for error in form.non_field_errors %}
+                                                        <div class="alert alert-danger">
+                                                            <strong>{{ error|escape }}</strong>
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endif %}
+                                        
+                                                {% if redirect_field_value %}
+                                                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                                                {% endif %}
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 p-0 input-group align-self-center">
+                                                    <button class="btn primary-button"><i class="icon-login"></i>LOGIN</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- #region Global ============================ -->
+        <!-- Scroll [to top] -->
+        <div id="scroll-to-top" class="scroll-to-top">
+            <a href="#header" class="smooth-anchor">
+                <i class="icon-arrow-up"></i>
+            </a>
+        </div>        
+        
+        <!-- ==============================================
+        Google reCAPTCHA // Put your site key here
+        =============================================== -->
+        <script src="https://www.google.com/recaptcha/api.js?render=6Lf-NwEVAAAAAPo_wwOYxFW18D9_EKvwxJxeyUx7"></script>
+
+        <!-- ==============================================
+        Vendor Scripts
+        =============================================== -->
+        <script src="{% static 'app_core/assets/js/vendor/jquery.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/jquery.easing.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/jquery.inview.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/popper.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/bootstrap.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/ponyfill.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/slider.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/animation.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/progress-radial.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/bricklayer.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/gallery.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/shuffle.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/vendor/particles.min.js' %}"></script>
+        <script src="{% static 'app_core/assets/js/main.js' %}"></script>
+        {% block extra_javascript %}{% endblock extra_javascript %}
+
+        <!-- #endregion Global ========================= -->
+
+    </body>
+</html>

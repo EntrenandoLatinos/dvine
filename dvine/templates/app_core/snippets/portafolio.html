@@ -1,0 +1,43 @@
+{% load static %}
+
+<!-- News -->
+<section id="blog" class="section-3 carousel showcase news featured">
+    <div class="overflow-holder">
+        <div class="container">
+            <div class="row intro">
+                <div class="col-12 col-md-9 align-self-center text-center text-md-left">
+                    <h2 class="featured">Our Portfolio</h2>
+                    <p>Explore our projects to inspire yourself today.</p>
+                </div>
+                <div class="col-12 col-md-3 align-self-end">
+                    <a href="{% url 'app_core:works' %}" class="btn mx-auto mr-md-0 ml-md-auto primary-button"><i class="icon-grid"></i>VIEW ALL</a>
+                </div>
+            </div>
+            <div class="swiper-container mid-slider items" data-autoplay="true">
+                <div class="swiper-wrapper">
+                    {% for work in works %}
+                        <div class="swiper-slide slide-center item">
+                            <div class="row card p-0 text-center">
+                                <a href="{{work.image.url}}" class="image-over" data-fancybox="galleryService">
+                                    <img src="{{work.image.url}}">
+                                </a>
+                                <div class="card-caption col-12 p-0">
+                                    <a href="javascript:;" class="open-fancybox mb-4"  data-gallery="galleryService" data-index="{{ forloop.counter }}">
+                                        <i class="fas fa-search"></i>
+                                        <div class="hover-circle"></div>
+                                    </a>
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <a href="{% url 'app_core:works' %}">
+                                            <p>View All </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>

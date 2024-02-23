@@ -1,0 +1,127 @@
+<!-- Footer -->
+<footer class="odd">
+
+    <!-- Footer [links] -->
+    <section id="footer" class="footer" style="padding: 81px 0;">
+        <div class="container">
+            <div class="row items footer-widget">
+                <div class="col-12 col-lg-3 p-0">
+                    <div class="row">
+                        <div class="branding col-12 p-3 text-center text-lg-left item">
+                            <div class="brand">
+                                <a href="/" class="logo">
+                                    DVINE                                 
+                                    <!-- 
+                                        Custom Logo
+                                        <img src="assets/images/logo.svg" alt="Leverage">
+                                    -->
+                                </a>
+                            </div>
+                            <P>Experience the DVine Roofing LLC difference, where professionalism meets elegance, and your property's well-being is our top priority.</P>
+                            <!-- <p>Authentic and innovative.<br>Built to the smallest detail<br>with a focus on usability<br>and performance.</p> -->
+                            <ul class="navbar-nav social share-list mt-0 ml-auto">
+                            {% for red_social in social_media %}
+                            <li class="nav-item">
+                                <a href="{{red_social.url}}" class="nav-link" target="_blank"><i class="{{red_social.icon_class_footer}}"></i></a>
+                            </li>
+                            {% endfor %}
+                                <!-- <li class="nav-item">
+                                    <a href="#" class="nav-link"><i class="icon-social-instagram ml-0"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><i class="icon-social-facebook"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><i class="icon-social-linkedin"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><i class="icon-social-twitter"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><i class="fab fa-tiktok custom-icon-tiktok-footer"></i> </a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9 p-0">                            
+                    <div class="row">
+                        <div class="col-12 col-lg-4 p-3 text-center text-lg-left item">
+                            <h4 class="title">Get in Touch</h4>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="javascript:;" class="nav-link">
+                                        <i class="icon-phone mr-2"></i>
+                                        +1 {{contact.phone1}}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:;" class="nav-link">
+                                        <i class="icon-envelope mr-2"></i>
+                                        {{contact.email}}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:;" class="nav-link">
+                                        <i class="icon-location-pin mr-2"></i>
+                                        {{contact.location}}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'app_core:contact' %}#contact" class="mt-4 mr-auto ml-auto ml-lg-0 btn primary-button"><i class="icon-speech"></i>SEND A MESSAGE</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-4 p-3 text-center text-lg-left item">
+                            <h4 class="title">Our Services</h4>
+                            <ul class="navbar-nav">
+                                {% for servicio in servicios %}
+                                    <li class="nav-item">
+                                        <a href="{% url 'app_core:services_view' servicio.id %}" class="nav-link">{{servicio.title}}</a>
+                                    </li>    
+                                {% endfor %}
+                                <!-- <li class="nav-item">
+                                    <a href="#" class="nav-link">Website Development</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Building Applications</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">SEO & Digital Marketing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Branding and Identity</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Digital Images & Videos</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-4 p-3 text-center text-lg-left item">
+                            <h4 class="title">Our Work</h4>
+                            {% for work in works|slice:":1" %}
+                                <img src="{{work.image.url}}" alt="">
+                            {% endfor %}
+                            <a href="{% url 'app_core:works' %}" class="mt-4 mr-auto ml-auto ml-lg-0 btn primary-button"><i class="icon-grid"></i>VIEW ALL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright -->
+    <section id="copyright" class="p-3 copyright">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-12 col-md-6 p-3 text-center text-lg-left">
+                    <p>Enjoy the low price. We are tracking any intention of piracy.</p>
+                </div> -->
+                <div class="col-12 col-md-6 p-3 text-center text-lg-right">
+                    <p>&copy; <script>document.write(new Date().getFullYear())</script> DVINE All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</footer>

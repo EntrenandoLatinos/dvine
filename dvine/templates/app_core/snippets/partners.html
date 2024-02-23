@@ -1,0 +1,44 @@
+{% load static %}
+
+<!-- Partners -->
+<section id="partner" class="section-5 logos">
+    <div class="overflow-holder">
+        <div class="container">
+            <div class="swiper-container min-slider">
+                <div class="swiper-wrapper">
+                {% for patrocinio in partners %}
+                <div class="swiper-slide slide-center item">
+                    <img src="{{patrocinio.image.url}}" class="fit-image w-85" alt="Fit Image">
+                </div>
+                {% endfor %}
+                    <!-- <div class="swiper-slide slide-center item">
+                        <img src="{% static 'app_core/assets/images/logo-1.png' %}" class="fit-image w-85" alt="Fit Image">
+                    </div>
+                    <div class="swiper-slide slide-center item">
+                        <img src="{% static 'app_core/assets/images/logo-2.png' %}" class="fit-image w-85" alt="Fit Image">
+                    </div>
+                    <div class="swiper-slide slide-center item">
+                        <img src="{% static 'app_core/assets/images/logo-3.png' %}" class="fit-image w-85" alt="Fit Image">
+                    </div>
+                    <div class="swiper-slide slide-center item">
+                        <img src="{% static 'app_core/assets/images/logo-4.png' %}" class="fit-image w-85" alt="Fit Image">
+                    </div>
+                    <div class="swiper-slide slide-center item">
+                        <img src="{% static 'app_core/assets/images/logo-5.png' %}" class="fit-image w-85" alt="Fit Image">
+                    </div>
+                    <div class="swiper-slide slide-center item">
+                        <img src="{% static 'app_core/assets/images/logo-6.png' %}" class="fit-image w-85" alt="Fit Image">
+                    </div>
+                    <div class="swiper-slide slide-center item">
+                        <img src="{% static 'app_core/assets/images/logo-7.png' %}" class="fit-image w-85" alt="Fit Image">
+                    </div>
+                    <div class="swiper-slide slide-center item">
+                        <img src="{% static 'app_core/assets/images/logo-8.png' %}" class="fit-image w-85" alt="Fit Image">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-1" style="padding: 60px 0px;"></section>

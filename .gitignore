@@ -2,6 +2,9 @@
 __pycache__/
 *.pyc
 
+# JetBrains IDE
+.idea/
+
 #App migrations and media folders
 dvine/app_core/migrations/
 dvine/app_user/migrations/

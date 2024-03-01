@@ -37,7 +37,10 @@ class BannerForm(forms.ModelForm):
 class AboutForm(forms.ModelForm):
     class Meta:
         model = About
-        fields = ['image', 'about', 'mision', 'vision']
+        fields = ['image', 'about', 'mision', 'vision', 'image_google', 'url_google']
+        widgets = {
+            'url_google': forms.TextInput(attrs={'class': 'fom-rcontrol', 'type': 'url'}),
+        }
 
 class SkillForm(forms.ModelForm):
     class Meta:
@@ -101,7 +104,10 @@ class TestimonialDeleteForm(forms.Form):
 class PartnerForm(forms.ModelForm):
     class Meta:
         model = Partner
-        fields = ['image']
+        fields = ['image', 'url']
+        widgets = {
+            'url': forms.TextInput(attrs={'class': 'fom-rcontrol', 'type': 'url'}),
+        }
 
 class FaqForm(forms.ModelForm):
     class Meta:

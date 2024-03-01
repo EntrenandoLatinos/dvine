@@ -34,7 +34,7 @@ class AuditoriaFecha(models.Model):
         abstract = True
 
 class Contact(AuditoriaFecha):
-    location = models.CharField("Location", max_length=100, null=True, blank=True)
+    location = models.CharField("Location", max_length=300, null=True, blank=True)
     phone1 = models.CharField("Phone 2", max_length=60, null=True, blank=True)
     phone2 = models.CharField("Phone 1", max_length=60, null=True, blank=True)
     email = models.EmailField("Email", null=True, blank=True)
@@ -51,10 +51,10 @@ class Contact(AuditoriaFecha):
 
 class Banner(AuditoriaFecha):
     image = models.ImageField(upload_to='banner/', null=True, blank=True)
-    title = models.CharField("Banner title", max_length=30, null=True, blank=True, default="")
-    subtitle = models.CharField("Banner subtitle", max_length=30, null=True, blank=True, default="")
-    description = models.TextField("Description", max_length=73, null=True, blank=True)
-    insurance = models.CharField("Insurance", max_length=100, null=True, blank=True, default="")
+    title = models.CharField("Banner title", max_length=300, null=True, blank=True, default="")
+    subtitle = models.CharField("Banner subtitle", max_length=300, null=True, blank=True, default="")
+    description = models.TextField("Description", max_length=300, null=True, blank=True)
+    insurance = models.CharField("Insurance", max_length=300, null=True, blank=True, default="")
 
     def __str__(self):
         return "{0}".format(str(self.title))
@@ -69,6 +69,8 @@ class About(AuditoriaFecha):
     about = RichTextField("About", null=True, blank=True)
     mision = RichTextField("Mission", null=True, blank=True)
     vision = RichTextField("Vision", null=True, blank=True)
+    image_google = models.ImageField(upload_to='about/', null=True, blank=True)
+    url_google = models.URLField("URL Google Business", null=True, blank=True)
 
     def __str__(self):
         return "{0}".format(str(self.id))
@@ -79,11 +81,11 @@ class About(AuditoriaFecha):
         verbose_name_plural = 'Abouts'
     
 class Skill(AuditoriaFecha):
-    title1 = models.CharField("Skill title 1", max_length=60, null=True, blank=True)
+    title1 = models.CharField("Skill title 1", max_length=300, null=True, blank=True)
     description1 = models.TextField("Description 1", null=True, blank=True)
-    title2 = models.CharField("Skill title 2", max_length=60, null=True, blank=True)
+    title2 = models.CharField("Skill title 2", max_length=300, null=True, blank=True)
     description2 = models.TextField("Description 2", null=True, blank=True)
-    title3 = models.CharField("Skill title 3", max_length=60, null=True, blank=True)
+    title3 = models.CharField("Skill title 3", max_length=300, null=True, blank=True)
     description3 = models.TextField("Description 3", null=True, blank=True)
 
     def __str__(self):
@@ -95,11 +97,11 @@ class Skill(AuditoriaFecha):
         verbose_name_plural = 'Skills'
     
 class Counter(AuditoriaFecha):
-    title1 = models.CharField("Title 1", max_length=60, null=True, blank=True)
+    title1 = models.CharField("Title 1", max_length=300, null=True, blank=True)
     number1 = models.IntegerField("Number 1", null=True, blank=True)
-    title2 = models.CharField("Title 2", max_length=60, null=True, blank=True)
+    title2 = models.CharField("Title 2", max_length=300, null=True, blank=True)
     number2 = models.IntegerField("Number 2", null=True, blank=True)
-    title3 = models.CharField("Title 3", max_length=60, null=True, blank=True)
+    title3 = models.CharField("Title 3", max_length=300, null=True, blank=True)
     number3 = models.IntegerField("Number 3", null=True, blank=True)
 
     def __str__(self):
@@ -112,7 +114,7 @@ class Counter(AuditoriaFecha):
 
 class Service(AuditoriaFecha):
     image = models.ImageField(upload_to='service/', null=True, blank=True)
-    title = models.CharField("Service Name", max_length=60, null=True, blank=True)
+    title = models.CharField("Service Name", max_length=300, null=True, blank=True)
     description = RichTextField("Description", null=True, blank=True)
     description_finish = models.TextField("Finish Description", null=True, blank=True)
 
@@ -127,7 +129,7 @@ class Service(AuditoriaFecha):
 class SubService(AuditoriaFecha):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='service_subservice')
     image = models.ImageField(upload_to='subservice/', null=True, blank=True)
-    title = models.CharField("Subservice Name", max_length=60, null=True, blank=True)
+    title = models.CharField("Subservice Name", max_length=300, null=True, blank=True)
     description = RichTextField("Description", null=True, blank=True)
 
     def __str__(self):
@@ -140,7 +142,7 @@ class SubService(AuditoriaFecha):
     
 class WorkImage(AuditoriaFecha):
     category = models.CharField("Category", null=True, blank=True, max_length=2, choices=CATEGORY_CHOICES)
-    title = models.CharField("Image title", max_length=60, null=True, blank=True)
+    title = models.CharField("Image title", max_length=300, null=True, blank=True)
     description = models.TextField("Description", null=True, blank=True)
     image = models.ImageField(upload_to='work_image/')
 
@@ -192,8 +194,8 @@ def delete_gallery_image(sender, instance, **kwargs):
     
 class Testimonial(AuditoriaFecha):
     image = models.ImageField(upload_to='testimonial/', null=True, blank=True)
-    name = models.CharField("Name", max_length=60, null=True, blank=True)
-    location = models.CharField("Location", max_length=60, null=True, blank=True)
+    name = models.CharField("Name", max_length=300, null=True, blank=True)
+    location = models.CharField("Location", max_length=300, null=True, blank=True)
     description = models.TextField("Description", null=True, blank=True)
 
     def __str__(self):
@@ -206,6 +208,7 @@ class Testimonial(AuditoriaFecha):
     
 class Partner(AuditoriaFecha):
     image = models.ImageField(upload_to='partner/', null=True, blank=True)
+    url = models.URLField("URL", null=True, blank=True)
 
     def __str__(self):
         return "{0}".format(str(self.id))
@@ -216,7 +219,7 @@ class Partner(AuditoriaFecha):
         verbose_name_plural = 'Partners'
     
 class Faq(AuditoriaFecha):
-    title = models.CharField("Title", max_length=60, null=True, blank=True)
+    title = models.CharField("Title", max_length=300, null=True, blank=True)
     description = RichTextField("Description", null=True, blank=True)
 
     def __str__(self):
@@ -228,7 +231,7 @@ class Faq(AuditoriaFecha):
         verbose_name_plural = 'Faqs'
     
 class Privacy(AuditoriaFecha):
-    title = models.CharField("Title", max_length=60, null=True, blank=True)
+    title = models.CharField("Title", max_length=300, null=True, blank=True)
     description = RichTextField("Description", null=True, blank=True)
 
     def __str__(self):
@@ -242,8 +245,8 @@ class Privacy(AuditoriaFecha):
 class SocialMedia(AuditoriaFecha):
     name = models.CharField("Name", max_length=2, choices=SOCIAL_MEDIA_CHOICES)
     url = models.URLField("URL")
-    icon_class = models.CharField("Icon class", max_length=50)
-    icon_class_footer = models.CharField("Icon class footer" ,max_length=50)
+    icon_class = models.CharField("Icon class", max_length=150)
+    icon_class_footer = models.CharField("Icon class footer" ,max_length=150)
 
     def __str__(self):
         return "{0}".format(str(self.get_name_display()))

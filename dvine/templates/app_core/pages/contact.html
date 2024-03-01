@@ -81,13 +81,13 @@ Open Street Map
     var markerLocation = [latitude,longitude];
 
     // Define la URL de la imagen personalizada
-    var imageUrl = '{% static "app_core/assets/images/logo_header.png" %}';
+    var imageUrl = '{% static "app_core/assets/images/marker_map.webp" %}';
 
     // Crea un icono personalizado con la imagen
     var customIcon = L.icon({
         iconUrl: imageUrl,
-        iconSize: [64, 30], // Tamaño de la imagen en píxeles
-        iconAnchor: [32, 30], // Punto de anclaje del icono (la parte inferior del icono en este caso)
+        iconSize: [100, 100], // Tamaño de la imagen en píxeles
+        iconAnchor: [50, 100], // Punto de anclaje del icono (la parte inferior del icono en este caso)
     });
 
     var map = L.map('map', {
